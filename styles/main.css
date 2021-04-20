@@ -1,0 +1,297 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+  /* cia nurodom ir apie travel more spalva  */
+  color: rgb(44, 57, 87);
+  margin: 0;
+}
+
+/* Navigation  */
+.navigation {
+  display: flex;
+  /* sitas veikia tik kai yra flex  */
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 60px;
+  background-color: #f2f2f2;
+  /* borderi nuimam */
+  /* border: 1px solid lightcoral; */
+}
+
+/* sutvarkom meniu. a - anchor tagas  */
+
+/* nuimam bullet points  */
+/* nuimam paddinga (left)  */
+.navigation ul,
+.footer-links ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+/* sudedam i linija  */
+.navigation li,
+.footer-links li {
+  display: inline-block;
+  /* pridedam tik x asy  */
+  margin: 0 10px;
+}
+
+.navigation a {
+  font-weight: 300;
+  text-decoration: none;
+  color: #333;
+}
+
+.navigation a:hover {
+  color: rgb(33, 103, 168);
+}
+
+.navigation .logo img {
+  width: 80px;
+}
+
+/* Hero content  */
+.hero-content {
+  position: relative;
+}
+
+.hero-content img {
+  width: 100%;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* kaip iscentuoti  */
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 54px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Section - global  */
+.section {
+  /* border: 2px solid springgreen; */
+  /* width: 980px; */
+  /* 980 nepriklausomai nuo ekrano dydzio, kas nera gerai  */
+  width: 100%;
+  max-width: 980px;
+  /* divu iscentravimas  */
+  /* /* margin-left: auto; */
+  /* margin-right: auto; */
+  /* trumpiau: margin: top, right, bottom,left */
+  /* margin: 20px auto 80px auto; */
+  /* kai ir kaire, ir desine auto:  */
+  margin: 20px auto 80px;
+}
+
+/* Section-about  */
+
+.section-about a {
+  color: rgb(44, 57, 87);
+}
+
+/* section-features  */
+/* kad pav butu vienoje eiluteje  */
+.section-features {
+  /* galima kopint is navigacijos  */
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-features .feature {
+  width: 30%;
+  /* nes pav dydis yra 500, tai sumazinam  */
+}
+
+.section-features .feature img {
+  width: 100%;
+}
+
+.section-features .feature-text {
+  display: block;
+  margin: 12px 0 18px;
+}
+
+.section-features .feature-sub-text {
+  display: block;
+  font-size: 13px;
+  text-align: justify;
+}
+
+/* section - train   */
+.section-app {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-app .app-image {
+  width: 30%;
+  /* isdidinam maksimaliai:  */
+  flex-grow: 1;
+  margin-right: 40px;
+  border-radius: 20px;
+  /* kad uzsilenktu krastai net jei pav iseina uz krastu  */
+  overflow: hidden;
+}
+
+.section-app .app-image img {
+  display: block;
+  width: 100%;
+  /* kad veliau paveikslelio pritraukimas nebutu toks astrus  */
+  /* all - animuosis visos taisykles, viskas, kas bus hoveryje  */
+  transition: all 0.4s ease-in-out;
+}
+
+.section-app .app-image:hover img {
+  /* hover uzdetas ant viso bloko, ne tik ant paveikslelio  */
+  transform: scale(1.18);
+}
+
+.section-app .text-container {
+  width: 30%;
+  flex: 0 1 30%;
+}
+
+.section-app .text-container h3 {
+  font-size: 28px;
+}
+
+.section-app .text-container p {
+  font-size: 18px;
+  /* tarpai tarp eiluciu  */
+  line-height: 28px;
+}
+
+/* Footer  */
+footer {
+  background-color: #333;
+  color: #dedede;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  /* vertikali asis 0  */
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.footer-links a {
+  color: #dedede;
+}
+
+/* Responsive device  */
+@media (max-width: 1100px) {
+  /* Section - global  */
+  .section {
+    /* kiti is sectiontinka, tai nebeerrasom  */
+    /* 980 nebetinka, tai perrasom  */
+    max-width: none;
+    /* kad footeris butu normalaus dydzio  */
+    padding-left: 40px;
+    padding-right: 40px;
+    /* 40 paddingo pikseliu prisideda prie plocio, i ta 100 procentu  */
+    /* kitu atveju ties ta vieta bus scrollas  */
+    box-sizing: border-box;
+  }
+}
+/* kad tekstas neluztu, kad kuo veliau nusikeltu i kita eilute  */
+@media (max-width: 920px) {
+  .hero-text {
+    font-size: 38px;
+  }
+}
+/* nuo 780px darom mobiliesiems  */
+@media (max-width: 780px) {
+  /* sucentruojam logo ir meniu  */
+  /* pasiimam navigation taisykles  */
+  .navigation {
+    flex-direction: column;
+    /* kodel lektuvelis nusoko i centra?  */
+    /* nes centruojama ne eiluteje, o stulpelyje  */
+    padding: 20px;
+  }
+  /* sumazinam lektuveli, padidinam tarpan */
+  .navigation .logo img {
+    width: 40px;
+    margin-bottom: 20px;
+  }
+  .hero-text {
+    font-size: 22px;
+  }
+  /* Section global  */
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .section-about p {
+    text-align: justify;
+  }
+
+  .section-features {
+    /* sukelia paveikslelius stulpeliu  */
+    /* flexas isrikiuoja  */
+    /* todel pagal nutylejima flex kryptis yra row  */
+    flex-direction: column;
+  }
+  .section-features .feature {
+    /* paveiksleliai bus centre  */
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .section-features .feature-text {
+    font-size: 17px;
+  }
+
+  .section-features .feature-sub-text {
+    font-size: 15px;
+  }
+  /* be tarpu esantis ilgas zodis NELUS ir sulauzys puslapi  */
+  /* todel sumazinam srifta ir sudedam i stulpeli  */
+  /* arba word-break: break-out; */
+  /* sutvarkom aplikacijos konteineri:  */
+  /* App  */
+  .section-app {
+    flex-direction: column;
+  }
+
+  .section-app .app-image {
+    width: 100%;
+    margin-right: 0;
+    border-radius: 10px;
+  }
+  .section-app .app-image {
+    width: 30%;
+    flex: 0 1 30%;
+  }
+  .section-app .text-container {
+    width: 100%;
+    flex: 1 0 auto;
+  }
+  .section-app .text-container h3 {
+    font-size: 28px;
+  }
+  .section-app .text-container {
+    font-size: 18px;
+    line-height: 28px;
+    text-align: justify;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    padding: 40 px 20px;
+  }
+
+  .footer-links li {
+    /* list items grazinam i block  */
+    display: block;
+    margin: 0;
+    margin-top: 14px;
+  }
+}
